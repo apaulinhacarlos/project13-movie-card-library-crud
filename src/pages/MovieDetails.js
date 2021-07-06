@@ -33,13 +33,9 @@ class MovieDetails extends Component {
   }
 
   render() {
-    // Change the condition to check the state
-    
     const { loading, movies } = this.state;
-    const { title, storyline, imagePath, genre, rating, subtitle } = movies;
-    
+    const { title, storyline, imagePath, genre, rating, subtitle, id } = movies;
     if (loading) return <Loading />;
-
     return (
       <div data-testid="movie-details" className="movie-card-details">
         <img
@@ -53,8 +49,9 @@ class MovieDetails extends Component {
         <p className="movie-card-p">{ `Genre: ${genre}` }</p>
         <p className="movie-card-p">{ `Rating: ${rating}` }</p>
         <span className="editar-voltar">
-          <Link to="/movies/:id/edit" className="editar">EDITAR</Link>
-          <Link to="/" className="voltar">VOLTAR</Link>
+          <Link to={ `/movies/${id}/edit` } className="botao">EDITAR</Link>
+          <Link to="/" className="botao">VOLTAR</Link>
+          <Link to="/" className="botao">DELETAR</Link>
         </span>
       </div>
     );
