@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MovieForm from '../components/MovieForm';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
-import MovieCard from '../components/MovieCard';
+// import MovieCard from '../components/MovieCard';
 
 class EditMovie extends Component {
   constructor(props) {
