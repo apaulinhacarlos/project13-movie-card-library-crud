@@ -3,3 +3,39 @@ body {
   box-sizing: border-box;
 }
 
+.movie-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 48px 30px;
+}
+
+.movie-card {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  overflow: hidden;
+  padding: 20px;
+  width: 300px;
+}
+
+.movie-card-image {
+  width: 100%;
+}
+
+.movie-card-title {
+  color: #343a40;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 10px 0 12px;
+}
+
+.movie-card-storyline {
+  font-size: 14px;
+  min-height: 100px;
+  text-align: justify;
+}
+
