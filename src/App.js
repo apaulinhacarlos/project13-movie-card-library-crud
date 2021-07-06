@@ -17,7 +17,7 @@ function App() {
       />
       <Route exact path="/movies/new" component={ NewMovie } />
       <Route exact path="/movies/:id/edit" component={ EditMovie } />
-      <Route exact path="/" component={ NotFound } />
+      <Route exact path="" component={ NotFound } />
     </BrowserRouter>
   );
 }

@@ -4,13 +4,12 @@ import React from 'react';
 class MovieForm extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = { ...props.movie };
-    console.log(this.state);
+    this.state = { ...props.movie };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
-    // const { onSubmit } = this.props;
+    const { onSubmit } = this.props;
     onSubmit(this.state);
   }
 
