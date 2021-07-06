@@ -12,8 +12,6 @@ class MovieList extends Component {
       loading: true,
       movies: [],
     };
-
-    console.log(movieAPI.getMovies());
   }
 
   componentDidMount() {
@@ -35,8 +33,6 @@ class MovieList extends Component {
 
   render() {
     const { loading, movies } = this.state;
-    // Render Loading here if the request is still happening
-
     return (
       <div data-testid="movie-list">
         { loading
