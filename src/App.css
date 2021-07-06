@@ -35,7 +35,16 @@ body {
 
 .movie-card-storyline {
   font-size: 14px;
-  min-height: 100px;
   text-align: justify;
 }
 
+.rating {
+  background-color: #007bff;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 40px;
+  padding: 6px 30px;
+  text-align: center;
+}
