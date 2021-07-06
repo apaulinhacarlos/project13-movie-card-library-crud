@@ -33,18 +33,40 @@ body {
   margin: 10px 0 12px;
 }
 
-.movie-card-storyline {
-  font-size: 14px;
+.movie-card-p {
+  font-size: 15px;
+  margin-bottom: 10px;
   text-align: justify;
 }
 
-.rating {
-  background-color: #007bff;
-  border-radius: 25px;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  min-width: 40px;
-  padding: 6px 30px;
+.movie-card-details {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  overflow: hidden;
+  padding: 20px;
+  width: 80%;
+}
+
+.editar-voltar {
+  display: flex;
+}
+
+.editar {
+  color: orange;
+  margin-top: 20px;
+  padding-right: 30px;
   text-align: center;
+  text-decoration: none;
+}
+
+.voltar {
+  color: orange;
+  margin-top: 20px;
+  padding-right: 30px;
+  text-align: center;
+  text-decoration: none;
 }

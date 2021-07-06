@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movieAPI';
 import Loading from '../components/Loading';
 
@@ -23,7 +24,6 @@ class MovieDetails extends Component {
       async () => {
         const { match: { params: { id } } } = this.props;
         const result = await movieAPI.getMovie(id);
-        console.log(result);
         this.setState({
           loading: false,
           movies: result,
@@ -34,27 +34,28 @@ class MovieDetails extends Component {
 
   render() {
     // Change the condition to check the state
-    // if (true) return <Loading />;
-
+    
     const { loading, movies } = this.state;
     const { title, storyline, imagePath, genre, rating, subtitle } = movies;
+    
+    if (loading) return <Loading />;
 
     return (
-      <div data-testid="movie-details" className="movie-list">
-        { loading
-          ? <Loading />
-          : <div className="movie-card">
-            <img
-              alt="Movie Cover"
-              src={ `../${imagePath}` }
-              className="movie-card-image"
-            />
-            <h4 className="movie-card-title">{ title }</h4>
-            <p className="movie-card-storyline">{ subtitle }</p>
-            <p className="movie-card-storyline">{ `Storyline: ${storyline}` }</p>
-            <p className="movie-card-storyline">{ `Genre: ${genre}` }</p>
-            <span className="rating">{ `Rating: ${rating}`}</span>
-          </div> }
+      <div data-testid="movie-details" className="movie-card-details">
+        <img
+          alt="Movie Cover"
+          src={ `../${imagePath}` }
+          className="movie-card-image"
+        />
+        <h4 className="movie-card-title">{ title }</h4>
+        <p className="movie-card-p">{ `Subtitle: ${subtitle}` }</p>
+        <p className="movie-card-p">{ `Storyline: ${storyline}` }</p>
+        <p className="movie-card-p">{ `Genre: ${genre}` }</p>
+        <p className="movie-card-p">{ `Rating: ${rating}` }</p>
+        <span className="editar-voltar">
+          <Link to="/movies/:id/edit" className="editar">EDITAR</Link>
+          <Link to="/" className="voltar">VOLTAR</Link>
+        </span>
       </div>
     );
   }
@@ -63,7 +64,7 @@ class MovieDetails extends Component {
 MovieDetails.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };
