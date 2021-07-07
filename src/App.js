@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MovieList from './pages/MovieList';
 import MovieDetails from './pages/MovieDetails';
 import NewMovie from './pages/NewMovie';
@@ -10,7 +10,6 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <Link to="/movies/new" className="botao">ADICIONAR CARTÃO</Link>
       <Switch>
         <Route
           path="/movies/new"
