@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
 
 import MovieForm from '../components/MovieForm';
@@ -43,13 +42,5 @@ class NewMovie extends Component {
     );
   }
 }
-
-NewMovie.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  }).isRequired,
-};
 
 export default NewMovie;
