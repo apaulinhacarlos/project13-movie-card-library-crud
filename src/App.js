@@ -24,8 +24,8 @@ function App() {
           path="/movies/:id"
           render={ (props) => <MovieDetails { ...props } /> }
         />
-        <Route path="/" component={ MovieList } />
-        <Route path="" component={ NotFound } />
+        <Route exact path="/" component={ MovieList } />
+        <Route path="/" component={ NotFound } />
       </Switch>
     </BrowserRouter>
   );
