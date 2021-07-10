@@ -37,7 +37,7 @@ class NewMovie extends Component {
     if (loading) return <Loading />;
     return (
       <div data-testid="new-movie" className="div-add-movie">
-        <h2 className="page-title-h2"> Adicione um novo filme </h2>
+        <h2 className="page-title-h2"> Adicione um Novo Filme </h2>
         <MovieForm onSubmit={ this.handleSubmit } />
       </div>
     );
