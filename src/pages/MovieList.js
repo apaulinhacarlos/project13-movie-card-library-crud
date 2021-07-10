@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import * as movieAPI from '../services/movieAPI';
 
@@ -45,6 +46,7 @@ class MovieList extends Component {
             { movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />) }
           </div>
         </main>
+        <Footer />
       </>
     );
   }
