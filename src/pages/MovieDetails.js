@@ -49,11 +49,16 @@ class MovieDetails extends Component {
         <p className="movie-card-p">{ `Genre: ${genre}` }</p>
         <p className="movie-card-p">{ `Rating: ${rating}` }</p>
         <span className="editar-voltar">
-          <Link to={ `/movies/${id}/edit` } className="botao">EDITAR</Link>
-          <Link to="/" className="botao">VOLTAR</Link>
+          <Link
+            to={ `/movies/${id}/edit` }
+            className="botao-editar-voltar"
+          >
+            EDITAR
+          </Link>
+          <Link to="/" className="botao-editar-voltar">VOLTAR</Link>
           <Link
             to="/"
-            className="botao"
+            className="botao-editar-voltar"
             onClick={ () => movieAPI.deleteMovie(id) }
           >
             DELETAR

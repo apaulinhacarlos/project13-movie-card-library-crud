@@ -6,6 +6,7 @@ import NewMovie from './pages/NewMovie';
 import EditMovie from './pages/EditMovie';
 import NotFound from './pages/NotFound';
 import './App.css';
+import './Loading.css';
 
 function App() {
   return (

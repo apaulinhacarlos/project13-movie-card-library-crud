@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
 import Loading from '../components/Loading';
+import Header from '../components/Header';
 
 import * as movieAPI from '../services/movieAPI';
 
@@ -36,12 +37,15 @@ class MovieList extends Component {
     const { loading, movies } = this.state;
     if (loading) return <Loading />;
     return (
-      <main>
-        <Link to="/movies/new" className="botao">ADICIONAR CARTÃO</Link>
-        <div className="movie-list" data-testid="movie-list">
-          { movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />) }
-        </div>
-      </main>
+      <>
+        <Header />
+        <main>
+          <Link to="/movies/new" className="botao-adicionar">ADICIONAR CARTÃO</Link>
+          <div className="movie-list" data-testid="movie-list">
+            { movies.map((movie) => <MovieCard key={ movie.title } movie={ movie } />) }
+          </div>
+        </main>
+      </>
     );
   }
 }

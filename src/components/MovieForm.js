@@ -21,7 +21,7 @@ class MovieForm extends React.Component {
     const { title } = this.state;
 
     return (
-      <div>
+      <div className="div-form">
         <label htmlFor="movie_title">
           Título
           <input
@@ -41,7 +41,7 @@ class MovieForm extends React.Component {
     const { subtitle } = this.state;
 
     return (
-      <div>
+      <div className="div-form">
         <label htmlFor="movie_subtitle">
           Subtítulo
           <input
@@ -60,7 +60,7 @@ class MovieForm extends React.Component {
     const { imagePath } = this.state;
 
     return (
-      <div className="row">
+      <div className="div-form">
         <label htmlFor="movie_image">
           Imagem
           <input
@@ -79,11 +79,12 @@ class MovieForm extends React.Component {
     const { storyline } = this.state;
 
     return (
-      <div>
+      <div className="div-form">
         <label htmlFor="movie_storyline">
           Sinopse
           <textarea
             id="movie_storyline"
+            className="textarea"
             value={ storyline }
             onChange={ (event) => this.updateMovie('storyline', event.target.value) }
           />
@@ -95,7 +96,7 @@ class MovieForm extends React.Component {
   renderGenreSelection() {
     const { genre } = this.state;
     return (
-      <div>
+      <div className="div-form">
         <label htmlFor="movie_genre">
           Gênero
           <select
@@ -116,7 +117,7 @@ class MovieForm extends React.Component {
   renderRatingInput() {
     const { rating } = this.state;
     return (
-      <div>
+      <div className="div-form">
         <label htmlFor="movie_rating">
           Avaliação
           <input
@@ -136,9 +137,10 @@ class MovieForm extends React.Component {
 
   renderSubmitButton() {
     return (
-      <div>
+      <div className="div-form">
         <button
           type="button"
+          className="botao-submit"
           onClick={ this.handleSubmit }
         >
           Submit
@@ -149,17 +151,15 @@ class MovieForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form>
-          {this.renderTitleInput()}
-          {this.renderSubtitleInput()}
-          {this.renderImagePathInput()}
-          {this.renderStorylineInput()}
-          {this.renderGenreSelection()}
-          {this.renderRatingInput()}
-          {this.renderSubmitButton()}
-        </form>
-      </div>
+      <form className="form-add-movie">
+        {this.renderTitleInput()}
+        {this.renderSubtitleInput()}
+        {this.renderImagePathInput()}
+        {this.renderStorylineInput()}
+        {this.renderGenreSelection()}
+        {this.renderRatingInput()}
+        {this.renderSubmitButton()}
+      </form>
     );
   }
 }
